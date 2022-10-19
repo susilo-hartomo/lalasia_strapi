@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_by_topics",
+  "info": {
+    "singularName": "article-by-topic",
+    "pluralName": "article-by-topics",
+    "displayName": "Article by Topic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "topic": {
+      "type": "string"
+    },
+    "isStatus": {
+      "type": "string"
+    }
+  }
+}
