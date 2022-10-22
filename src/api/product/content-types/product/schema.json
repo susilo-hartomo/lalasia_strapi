@@ -49,6 +49,12 @@
       "relation": "oneToOne",
       "target": "api::count-product-sold.count-product-sold",
       "inversedBy": "product"
+    },
+    "product_varians": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-varian.product-varian",
+      "mappedBy": "product"
     }
   }
 }

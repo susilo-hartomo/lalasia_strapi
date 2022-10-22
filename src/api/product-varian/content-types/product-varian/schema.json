@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product-varian",
     "pluralName": "product-varians",
-    "displayName": "Product Varian"
+    "displayName": "Product Varian",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,22 @@
     },
     "price": {
       "type": "decimal"
+    },
+    "color": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "product_varians"
+    },
+    "sku": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sku.sku",
+      "inversedBy": "product_varian"
     }
   }
 }
