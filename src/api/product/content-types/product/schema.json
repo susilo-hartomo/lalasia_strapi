@@ -55,6 +55,27 @@
       "relation": "oneToMany",
       "target": "api::product-varian.product-varian",
       "mappedBy": "product"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "product_categoty": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-categoty.product-categoty",
+      "inversedBy": "products"
+    },
+    "cart": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cart.cart",
+      "mappedBy": "product"
+    },
+    "order_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-item.order-item",
+      "inversedBy": "product"
     }
   }
 }

@@ -69,6 +69,30 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "users_permissions_user"
+    },
+    "carts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cart.cart",
+      "mappedBy": "users_permissions_user"
+    },
+    "order_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-item.order-item",
+      "inversedBy": "users_permissions_user"
+    },
+    "order_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-detail.order-detail",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

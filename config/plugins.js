@@ -20,19 +20,22 @@ module.exports = ({ env }) => {
       config: {
         plugin: {
           // disable data-theme tag setting //
-          // setAttribute:false,
+          setAttribute: false,
           // disable strapi theme, will use default ckeditor theme //
-          // strapiTheme:false,
+          strapiTheme: false,
           // styles applied to editor container (global scope) //
-          // styles:`
-          // .ck.ck-editor__main .ck-focused{
-          //   max-height: 700px;
-          // }
-          // :root{
-          //   --ck-color-focus-border:red;
-          //   --ck-color-text:red;
-          // }
-          // `
+          styles: `
+          .ck.ck-editor__main .ck-focused{
+            max-height: 900px;
+          }
+          .ck.ck-toolbar>.ck-toolbar__items {
+            max-width: 600px !important;
+          }
+          :root{
+            --ck-color-focus-border:black;
+            --ck-color-text:black;
+          }
+          `,
         },
         editor: {
           // editor default config
@@ -57,6 +60,7 @@ module.exports = ({ env }) => {
               "underline",
               "fontSize",
               "removeFormat",
+              "column",
               "|",
               "bulletedList",
               "todoList",
@@ -91,10 +95,10 @@ module.exports = ({ env }) => {
             ],
           },
           // https://ckeditor.com/docs/ckeditor5/latest/features/font.html
-          fontSize: {
-            options: [9, 11, 13, "default", 17, 19, 21, 27, 35],
-            supportAllValues: false,
-          },
+          // fontSize: {
+          //   options: [9, 11, 13, "default", 17, 19, 21, 27, 35],
+          //   supportAllValues: true,
+          // },
           fontFamily: {
             options: [
               "default",
